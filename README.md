@@ -51,7 +51,7 @@ python3 demo.py
 
 ### 3. Check Your Dataset for Duplicates
 ```bash
-python3 check_sheldon_duplicates.py
+python3 check_duplicates.py
 ```
 
 **No installation required!** Works with Python 3.9+ standard library.
@@ -73,7 +73,7 @@ print(f"Similarity: {result['similarity_score']}")
 ### 2. **Dataset Quality Control**
 Find and remove duplicates in training datasets:
 ```bash
-python3 check_sheldon_duplicates.py
+python3 check_duplicates.py
 # Choose option 2 to remove duplicates
 ```
 
@@ -248,7 +248,7 @@ python3 examples/batch_processing.py
 
 ### Dataset Cleaning
 ```bash
-python3 check_sheldon_duplicates.py
+python3 check_duplicates.py
 # Choose option 2 to remove duplicates
 # Creates: sheldon_cleaned.json
 ```

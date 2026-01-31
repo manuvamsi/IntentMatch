@@ -1,8 +1,13 @@
 """
-Sheldon Dataset Duplicate Checker
+Dataset Duplicate Checker
 
-This script analyzes the sheldon.json dataset to find duplicate conversations
+This script analyzes JSON datasets to find duplicate conversations
 based on intent-level similarity.
+
+Usage:
+    python3 check_sheldon_duplicates.py [dataset.json]
+    
+    If no file is specified, defaults to 'sheldon.json'
 """
 
 import sys
@@ -204,13 +209,27 @@ def save_cleaned_dataset(cleaned_dataset, output_file='sheldon_cleaned.json'):
 def main():
     """Main execution."""
     print("\n" + "=" * 70)
-    print("  SHELDON DATASET DUPLICATE CHECKER")
+    print("  DATASET DUPLICATE CHECKER")
     print("  Using Intent Identity Framework (IIF)")
     print("=" * 70 + "\n")
     
+    # Get dataset filename from command line or use default
+    if len(sys.argv) > 1:
+        dataset_file = sys.argv[1]
+    else:
+        dataset_file = 'sheldon.json'
+    
+    # Check if file exists
+    if not os.path.exists(dataset_file):
+        print(f"❌ Error: File '{dataset_file}' not found!")
+        print(f"\nUsage: python3 {sys.argv[0]} [dataset.json]")
+        print(f"Example: python3 {sys.argv[0]} mydata.json")
+        print(f"\nIf no file is specified, defaults to 'sheldon.json'\n")
+        return
+    
     # Load dataset
-    print("📂 Loading sheldon.json...")
-    dataset = load_sheldon_dataset('sheldon.json')
+    print(f"📂 Loading {dataset_file}...")
+    dataset = load_sheldon_dataset(dataset_file)
     print(f"✅ Loaded {len(dataset)} conversation entries\n")
     
     # Extract conversations
@@ -239,7 +258,10 @@ def main():
     
     # Save report if duplicates found
     if duplicates:
-        save_report(duplicates)
+        # Generate output filename based on input
+        base_name = os.path.splitext(dataset_file)[0]
+        report_file = f"{base_name}_duplicates_report.json"
+        save_report(duplicates, report_file)
         
         # Ask if user wants to remove duplicates
         print("=" * 70)
@@ -263,16 +285,16 @@ def main():
             print(f"   Removed indices: {removed_indices[:10]}{'...' if len(removed_indices) > 10 else ''}\n")
             
             # Save cleaned dataset
-            output_file = 'sheldon_cleaned.json'
+            output_file = f"{base_name}_cleaned.json"
             save_cleaned_dataset(cleaned_dataset, output_file)
             
             print("=" * 70)
             print("✅ Duplicate removal complete!")
             print("=" * 70)
             print(f"\n📁 Files created:")
-            print(f"   • sheldon_duplicates_report.json (duplicate analysis)")
+            print(f"   • {report_file} (duplicate analysis)")
             print(f"   • {output_file} (cleaned dataset)")
-            print(f"\n💡 Original file 'sheldon.json' is unchanged.\n")
+            print(f"\n💡 Original file '{dataset_file}' is unchanged.\n")
         else:
             print("\n✅ No changes made to dataset.\n")
     
