@@ -1,0 +1,69 @@
+{
+    "conversational": {
+        "description": "Back-and-forth dialog pattern",
+        "indicators": [
+            "user:",
+            "assistant:",
+            "Q:",
+            "A:",
+            "human:",
+            "ai:",
+            "question:",
+            "answer:"
+        ]
+    },
+    "instructional": {
+        "description": "Step-by-step guidance",
+        "indicators": [
+            "step",
+            "first",
+            "then",
+            "finally",
+            "1.",
+            "2.",
+            "3."
+        ]
+    },
+    "template": {
+        "description": "Fill-in-the-blank template structure",
+        "indicators": [
+            "[",
+            "]",
+            "{",
+            "}",
+            "<",
+            ">",
+            "___"
+        ]
+    },
+    "list": {
+        "description": "List or enumeration pattern",
+        "indicators": [
+            "-",
+            "*",
+            "•",
+            "1.",
+            "2.",
+            "3."
+        ]
+    },
+    "conditional": {
+        "description": "If-then conditional logic",
+        "indicators": [
+            "if",
+            "when",
+            "unless",
+            "otherwise",
+            "else"
+        ]
+    },
+    "example_based": {
+        "description": "Learning from examples",
+        "indicators": [
+            "example:",
+            "e.g.",
+            "for instance",
+            "such as"
+        ]
+    }
+}

@@ -1,0 +1,82 @@
+{
+  "roleplay": {
+    "description": "Prompt involves taking on a character or persona",
+    "rules": {
+      "required": ["roles"],
+      "keywords": ["act as", "you are", "pretend to be", "roleplay", "character", "persona"]
+    },
+    "parent": null
+  },
+  "persona_lock": {
+    "description": "Strict adherence to character behavior",
+    "rules": {
+      "required": ["constraints"],
+      "keywords": ["always", "never", "must", "strict", "only", "cannot", "should not"]
+    },
+    "parent": "roleplay"
+  },
+  "dialog_control": {
+    "description": "Controls conversation flow and structure",
+    "rules": {
+      "required": ["interaction_pattern"],
+      "keywords": ["respond", "answer", "reply", "conversation", "dialog"]
+    },
+    "parent": null
+  },
+  "character_consistency": {
+    "description": "Maintains consistent character traits",
+    "rules": {
+      "required": ["constraints"],
+      "keywords": ["consistent", "maintain", "stay in character", "catchphrase"]
+    },
+    "parent": "roleplay"
+  },
+  "instructional": {
+    "description": "Provides step-by-step guidance",
+    "rules": {
+      "required": ["goal"],
+      "keywords": ["step", "first", "then", "next", "finally", "guide", "tutorial"]
+    },
+    "parent": null
+  },
+  "creative_writing": {
+    "description": "Generates creative content",
+    "rules": {
+      "required": ["goal"],
+      "keywords": ["write", "create", "generate", "story", "poem", "creative"]
+    },
+    "parent": null
+  },
+  "data_extraction": {
+    "description": "Extracts structured data from text",
+    "rules": {
+      "required": ["goal"],
+      "keywords": ["extract", "parse", "identify", "find", "data", "information"]
+    },
+    "parent": null
+  },
+  "format_conversion": {
+    "description": "Converts between different formats",
+    "rules": {
+      "required": ["goal"],
+      "keywords": ["convert", "transform", "format", "translate", "rewrite"]
+    },
+    "parent": null
+  },
+  "question_answering": {
+    "description": "Answers questions based on context",
+    "rules": {
+      "required": ["goal"],
+      "keywords": ["answer", "question", "what", "why", "how", "explain"]
+    },
+    "parent": null
+  },
+  "code_generation": {
+    "description": "Generates code or programming solutions",
+    "rules": {
+      "required": ["goal"],
+      "keywords": ["code", "program", "function", "implement", "script", "algorithm"]
+    },
+    "parent": null
+  }
+}

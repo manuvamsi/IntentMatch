@@ -1,0 +1,50 @@
+{
+    "persona": [
+        "character",
+        "role",
+        "person",
+        "identity"
+    ],
+    "constraint": [
+        "rule",
+        "restriction",
+        "limitation",
+        "requirement"
+    ],
+    "goal": [
+        "objective",
+        "purpose",
+        "aim",
+        "target"
+    ],
+    "behavior": [
+        "action",
+        "conduct",
+        "manner",
+        "response"
+    ],
+    "output": [
+        "result",
+        "response",
+        "answer",
+        "generation"
+    ],
+    "input": [
+        "query",
+        "question",
+        "prompt",
+        "request"
+    ],
+    "format": [
+        "structure",
+        "layout",
+        "template",
+        "pattern"
+    ],
+    "style": [
+        "tone",
+        "voice",
+        "manner",
+        "approach"
+    ]
+}

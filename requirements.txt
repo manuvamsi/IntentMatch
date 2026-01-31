@@ -1,0 +1,10 @@
+# Core dependencies (required)
+# No external dependencies for core functionality!
+
+# Optional dependencies for Layer 5 (embedding filter)
+# Uncomment to enable semantic similarity features:
+# sentence-transformers>=2.2.0
+
+# Development dependencies
+pytest>=7.0.0
+pytest-cov>=4.0.0
